@@ -270,4 +270,8 @@ a {
 	.chat-messages .message{
 		max-width: 80%;
 	}
+
+	.chat-messages .message--my{
+		margin-left: 20%;
+	}
 }
