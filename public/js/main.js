@@ -127,3 +127,22 @@ document.getElementById('leave-btn').addEventListener('click', () => {
 function kickUser(id){
   socket.emit("kick", id);
 }
+
+//Als mobile versie display dit
+
+const mobile_button = document.getElementById("display--js");
+let open = false;
+
+mobile_button.addEventListener('click', () => {
+  const users = document.getElementsByClassName("chat-sidebar")[0]; 
+  if(open === false){
+    users.style.bottom = "0";
+    users.style.opacity = "1";
+    open = true;
+  }
+  else{
+    users.style.bottom = "-40rem";
+    users.style.opacity = "0";
+    open = false;
+  }
+});

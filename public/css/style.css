@@ -286,13 +286,32 @@ input:not(:placeholder-shown) + span{
 	padding-top: 2rem;
 }
 
+.mobile__button{
+	display: none;
+	width: 7rem;
+	height: 7rem;
+	border-radius: 50%;
+	font-size: 180%;
+	border: none;
+	background-color: var(--dark-color-a);
+	color: var(--light-color);
+	bottom: 2rem;
+}
+
 @media (max-width: 43.75rem) {
 	.chat-main {
 		display: block;
+		position: relative;
 	}
 
 	.chat-sidebar {
-		display: none;
+		display: block;
+		position: absolute;
+		width: 100%;
+		bottom: -40rem;
+		opacity: 0;
+		transition: 0.5s all;
+		z-index: 1;
 	}
 
 	.chat-messages .message{
@@ -301,5 +320,10 @@ input:not(:placeholder-shown) + span{
 
 	.chat-messages .message--my{
 		margin-left: 20%;
+	}
+
+	.mobile__button{
+		position: fixed;
+		display: block;
 	}
 }
