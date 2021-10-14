@@ -230,20 +230,41 @@ a {
 	margin-bottom: 2rem;
 }
 
-.join-main .form-control {
-	margin-bottom: 2rem;
-}
-
 .join-main label {
-	display: block;
-	margin-bottom: 0.5rem;
+	margin-top: 2rem;
+    margin-bottom:1.5rem;
+    position:relative;
 }
 
-.join-main input[type='text'] {
+.join-main input {
 	font-size: 1.6rem;
-	padding: 0.5rem;
-	height: 4rem;
+    width:100%;
+    padding:1rem;
+    margin-top:2rem;
+	margin-bottom: 2rem;
+    border:none;
+    outline:none;
 	width: 100%;
+}
+
+.join-main input::placeholder{
+    opacity:0;
+}
+
+.join-main span{
+	position:absolute;
+	top: -3rem;
+	left: 1rem;
+	transform:translateY(3rem);
+	transition-duration:300ms;
+	color: #6b6b6b;
+}
+
+.join-main label:focus-within > span,
+input:not(:placeholder-shown) + span{
+    color:var(--light-color);
+    transform:translateY(-0.5rem);
+	font-size: 1.8rem;
 }
 
 .join-main select {
@@ -254,8 +275,15 @@ a {
 }
 
 .join-main .btn {
-	margin-top: 2rem;
+	margin: 2rem 0;
 	width: 100%;
+}
+
+.join-main a{
+	color: var(--light-color);
+	font-size: 1.4rem;
+	border-bottom: 0.1rem solid var(--light-color);
+	padding-top: 2rem;
 }
 
 @media (max-width: 43.75rem) {
