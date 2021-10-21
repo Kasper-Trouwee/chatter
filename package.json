@@ -1,20 +1,24 @@
 {
-  "name": "chatter",
+  "name": "chatter_v2",
   "version": "1.0.0",
-  "description": "browser based chat app",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Kasper Trouwee",
-  "license": "school",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "moment": "^2.24.0",
-    "socket.io": "^2.4.0"
+    "express-openid-connect": "^2.5.1",
+    "moment": "^2.29.1",
+    "socket.io": "^4.3.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.14"
   }
 }

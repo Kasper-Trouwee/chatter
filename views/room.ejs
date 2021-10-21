@@ -10,16 +10,16 @@
 			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
 			crossorigin="anonymous"
 		/>
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="/css/style.css" />
 		<title>Chatter App</title>
 	</head>
 	<body>
 		<div class="join-container">
 			<header class="join-header">
-				<h1><i class="fas fa-crow"></i> Chatter</h1>
+				<h1><a class="a__none" href="/"><i class="fas fa-crow"></i> Chatter</a></h1>
 			</header>
 			<main class="join-main">
-				<form action="chat.html">
+				<form action="/room/chat">
 					<label for="username">
 						<input type="text" name="username" id="username" placeholder="Enter username..." required>
 						<span>Username</span>
@@ -28,13 +28,13 @@
 						<input type="text" name="room" id="Room" placeholder="Enter room name..." required>
 						<span>Room</span>
 					</label>
-					<label for="password">
-						<input type="password" name="password" id="password" placeholder="Room password" required>
-						<span>Password</span>
-					</label>
-					<button type="submit" class="btn">Create Chat</button>
+					<button type="submit" class="btn">Join Chat</button>
 				</form>
 			</main>
 		</div>
+		<script>
+			const current_user = <%- JSON.stringify(user) %>;
+			document.getElementById("username").value = current_user.nickname;
+		  </script>
 	</body>
 </html>

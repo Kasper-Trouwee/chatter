@@ -298,6 +298,115 @@ input:not(:placeholder-shown) + span{
 	bottom: 2rem;
 }
 
+.home{
+	padding: 0;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.home__nav{
+	position: fixed;
+	background-color: var(--light-color);
+	color: var(--dark-color-a);
+	text-transform: uppercase;
+	right: 0;
+}
+
+.home__nav li{
+	padding: 1.2rem 1.6rem;
+	font-weight: 600;
+	font-size: 120%;
+}
+
+.home__nav a{
+	color: inherit;
+}
+
+.home__header{
+	font-size: 150%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: var(--light-color);
+	height: 40vh;
+	background: linear-gradient(272deg, #6e85b2, #5c527f);
+    background-size: 400% 400%;
+	-webkit-animation: home__header--animation 20s ease infinite;
+    -moz-animation: home__header--animation 20s ease infinite;
+    animation: home__header--animation 20s ease infinite;
+}
+
+.home__header p{
+	width: 60vw;
+}
+
+.home__header button{
+	padding: 1.2rem 1.8rem;
+	margin-top: 2rem;
+	font-size: 80%;
+	border: 0.3rem solid var(--light-color);
+	color: var(--light-color);
+	background-color: transparent;
+	border-radius: 10rem;
+	cursor: pointer;
+	transition: 3s border-radius;
+}
+
+.home__header button:hover{
+	border-radius: 1rem;
+	transition: 1s border-radius;
+}
+
+.home__profile{
+	margin: 2rem;
+	margin-left: 30vw;
+	padding: 2rem;
+	width: 40vw;
+	background-color: var(--dark-color-b);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: var(--light-color);
+}
+
+.home__profile img{
+	border-radius: 50%;
+	width: 40%;
+}
+
+#js--nickname{
+	padding-top: 2rem;
+}
+
+.home__profile h2{
+	font-size: 150%;
+	font-weight: 400;
+	padding-bottom: 2rem;
+}
+
+.home__profile button{
+	padding: 1.2rem 1.8rem;
+	font-size: 100%;
+	border: 0.3rem solid var(--light-color);
+	color: var(--light-color);
+	background-color: transparent;
+	border-radius: 10rem;
+	cursor: pointer;
+	transition: 0.5s background-color;
+}
+
+.home__profile button:hover{
+	background-color: var(--dark-color-a);
+}
+
+.a__none{
+	color: inherit;
+}
+
 @media (max-width: 43.75rem) {
 	.chat-main {
 		display: block;
@@ -326,4 +435,29 @@ input:not(:placeholder-shown) + span{
 		position: fixed;
 		display: block;
 	}
+
+	.home__header{
+		height: 60vh;
+	}
+
+	.home__profile{
+		width: 80vw;
+		margin-left: 10vw;
+	}
+}
+
+@-webkit-keyframes home__header--animation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes home__header--animation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes home__header--animation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }

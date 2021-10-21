@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+		<link rel="stylesheet" href="/css/style.css" />
+    <title><%= title %></title>
+</head>
+<body class="home">
+    <nav class="home__nav"><ul>
+        <% if(!isAuthenticated) { %>
+        <li><a href="/login/"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <% } else { %>
+        <li><a href="/logout/"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        <% } %>
+    </ul></nav>
+
+    <header class="home__header">
+      <h1>Chatter</h1>
+      <p>Welcome to Chatter, a chat app build with Socket.io, Express & Auth0. Join a room now and start talking with your friends</p>
+      <button onclick="location.href='/room';">Join a Room</button>
+    </header>
+
+    <% if(isAuthenticated) { %>
+      <section class="home__profile">
+        <img src=<%-JSON.stringify(user.picture)%> alt="User profile picture">
+        <p id="js--nickname"></p>
+        <p id="js--email"></p>
+      </section>
+
+      <script>
+        const current_user = <%- JSON.stringify(user) %>;
+        document.getElementById("js--nickname").innerHTML = current_user.nickname;
+        document.getElementById("js--email").innerHTML = current_user.email;
+      </script>
+    <% } else { %>
+      <section class="home__profile">
+        <h2>Login or create an account to use Chatter now</h2>
+        <button onclick="location.href='/login/';"><i class="fas fa-sign-in-alt"></i> Create an Account</button>
+      </section>
+    <% } %>
+
+</body>
+</html>
